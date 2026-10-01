@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Job Application Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Job Application Tracker</h1>
+            <p>Track your job applications using REST APIs</p>
+        </header>
+
+
+        <!-- Statistics -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <h3>Total</h3>
+                <p id="totalCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Applied</h3>
+                <p id="appliedCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Interview</h3>
+                <p id="interviewCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Selected</h3>
+                <p id="selectedCount">0</p>
+            </div>
+
+        </section>
+
+
+        <!-- Search and Filter -->
+
+        <section class="controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search company or position..."
+            >
+
+            <select id="statusFilter">
+
+                <option value="all">All Status</option>
+
+                <option value="Applied">
+                    Applied
+                </option>
+
+                <option value="Interview">
+                    Interview
+                </option>
+
+                <option value="Selected">
+                    Selected
+                </option>
+
+                <option value="Rejected">
+                    Rejected
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- Form -->
+
+        <section class="form-section">
+
+            <h2 id="formTitle">Add Job Application</h2>
+
+            <form id="applicationForm">
+
+                <input
+                    type="text"
+                    id="company"
+                    placeholder="Company name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="position"
+                    placeholder="Job position"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="location"
+                    placeholder="Location"
+                    required
+                >
+
+                <select id="status" required>
+
+                    <option value="Applied">
+                        Applied
+                    </option>
+
+                    <option value="Interview">
+                        Interview
+                    </option>
+
+                    <option value="Selected">
+                        Selected
+                    </option>
+
+                    <option value="Rejected">
+                        Rejected
+                    </option>
+
+                </select>
+
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+                <div class="form-buttons">
+
+                    <button type="submit" id="submitButton">
+                        Add Application
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelButton"
+                        class="cancel"
+                        hidden
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Loading -->
+
+        <p id="loading" class="loading">
+            Loading applications...
+        </p>
+
+
+        <!-- Error -->
+
+        <p id="errorMessage" class="error"></p>
+
+
+        <!-- Applications -->
+
+        <section>
+
+            <h2>Applications</h2>
+
+            <div id="applicationContainer">
+
+            </div>
+
+        </section>
+
+
+        <!-- Scroll information -->
+
+        <div id="scrollInfo" class="scroll-info">
+            Scroll position: 0
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
